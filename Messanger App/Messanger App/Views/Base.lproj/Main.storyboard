@@ -12,7 +12,7 @@
         <!--Uesrs Table View Controller-->
         <scene sceneID="1eQ-xT-lVE">
             <objects>
-                <viewController storyboardIdentifier="U" id="Us6-vh-zMI" customClass="UesrsTableViewController" customModule="Messanger_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chats" id="Us6-vh-zMI" customClass="UesrsTableViewController" customModule="Messanger_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9mT-G4-TgX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,6 +195,7 @@
                 <tabBarController storyboardIdentifier="MainVC" automaticallyAdjustsScrollViewInsets="NO" id="ysq-Rn-V4v" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xr0-KG-lLz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
