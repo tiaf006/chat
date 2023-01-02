@@ -277,61 +277,61 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         })
         
         // }
-
-        //  }
-
-
-        /*
-
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-        //Auth.auth().createUser(withEmail: email, password: password, completion:{( authResult, error) in
-            //createUser(withEmail: email, password: password, completion:
-            //{(authResult, error: Error?) in
-            
-            
-          if error != nil {
-                print (error)
-                return
-            }
-            guard authResult!.user.uid != nil else {
-                return
-            }
-            
-           // successfully authenticated user
-            let imageName = NSUUID().UUIDString
-            let storageRef =
-            Storage.storage().reference().child("images").child("\(imageName).png")
-            if let uploadData = UIImagePNGRepresentation(self.imageView.image!) {
-               storageRef.putData(uploadData, metadata: nil, completion:
-                                 //   { (metadata, error) in
-                    if error != nil {
-                        print(error)
-                return
-                    }
-                   if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
-                       let values = ["name": "\(firstName) \(lastName)", "email": email,
-                                      "profileImageUrl": profileImageUrl]
-                        self.registerUserIntoDatabaseWithUID (authResult, values:values)
-                    }
-                })
-            }*/
-        }
         
+        //  }
+        
+        
+        /*
+         
+         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+         //Auth.auth().createUser(withEmail: email, password: password, completion:{( authResult, error) in
+         //createUser(withEmail: email, password: password, completion:
+         //{(authResult, error: Error?) in
+         
+         
+         if error != nil {
+         print (error)
+         return
+         }
+         guard authResult!.user.uid != nil else {
+         return
+         }
+         
+         // successfully authenticated user
+         let imageName = NSUUID().UUIDString
+         let storageRef =
+         Storage.storage().reference().child("images").child("\(imageName).png")
+         if let uploadData = UIImagePNGRepresentation(self.imageView.image!) {
+         storageRef.putData(uploadData, metadata: nil, completion:
+         //   { (metadata, error) in
+         if error != nil {
+         print(error)
+         return
+         }
+         if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
+         let values = ["name": "\(firstName) \(lastName)", "email": email,
+         "profileImageUrl": profileImageUrl]
+         self.registerUserIntoDatabaseWithUID (authResult, values:values)
+         }
+         })
+         }*/
     }
     
-   /* private func registerUserIntoDatabaseWithUID(authResult: AuthDataResult?, values:[String: AnyObject]) {
-        let ref = Database.database().reference(fromURL: "https://messangerapp-5af6b-default-rtdb.firebaseio.com/")
-        let usersRef =  ref.child("Uesrs").child(authResult!.user.uid)
-       // let values: [String: String] = ["name": "\(firstName) \(lastName)", "email": email]
-        usersRef.updateChildValues(values, withCompletionBlock: {(err, usersRef)in
-            if err != nil {
-                print(err)
-                return
-            }
-            print("Save user succeddfully into Firebase db") }
-        )
-    }
-}*/
+}
+
+/* private func registerUserIntoDatabaseWithUID(authResult: AuthDataResult?, values:[String: AnyObject]) {
+ let ref = Database.database().reference(fromURL: "https://messangerapp-5af6b-default-rtdb.firebaseio.com/")
+ let usersRef =  ref.child("Uesrs").child(authResult!.user.uid)
+ // let values: [String: String] = ["name": "\(firstName) \(lastName)", "email": email]
+ usersRef.updateChildValues(values, withCompletionBlock: {(err, usersRef)in
+ if err != nil {
+ print(err)
+ return
+ }
+ print("Save user succeddfully into Firebase db") }
+ )
+ }
+ }*/
 
 /* if !emailField.isEmail(){
  let alertController = UIAlertController(title: "Error", message: "Please enter correct email", preferredStyle: .alert)

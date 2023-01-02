@@ -26,10 +26,10 @@ class NewMesswController: UIViewController {
         field.keyboardType = .alphabet
         return field
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         view.backgroundColor = UIColor.white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handelCanel))
         layOuts()
@@ -40,7 +40,7 @@ class NewMesswController: UIViewController {
         navigationItem.title = "search"
         view.addSubview(tableView)
         view.addSubview(searchUsersField)
-       
+        
         searchUsersField.translatesAutoresizingMaskIntoConstraints = false
         searchUsersField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         searchUsersField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
@@ -58,7 +58,6 @@ class NewMesswController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.reloadData()
-        //tableView.backgroundColor = .lightGray
     }
     
     func fetchUser() {
@@ -73,38 +72,38 @@ class NewMesswController: UIViewController {
                 print ("!!!!!!!\(user.name), \(user.email)!!!!")
             }
         }, withCancel: nil)
-        print("noooo")
     }
     
     @objc func handelCanel() {
         self.navigationController?.popViewController(animated: true)
     }
 }
+
 extension NewMesswController:UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView,
-                       didSelectRowAt indexPath: NSIndexPath) {
-            let stroryBBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = stroryBBoard.instantiateViewController(withIdentifier: "U") as! UesrsTableViewController
-            vc.loadView()
-            vc.showChatController()
-            print("Dismiss completed")
-            //var usersController: UesrsTableViewController?
-            dismiss (animated: true) {
-            }
-        }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         tableView.rowHeight = 60
-        return users.count
+              return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! searchUserCell
-        cell.isUserInteractionEnabled = true
-        let user = users[indexPath.row]
-        cell.nameLbl.text = user.name
-        cell.emailLbl.text = user.email
-        return cell
+               cell.isUserInteractionEnabled = true
+               let user = users[indexPath.row]
+               cell.nameLbl.text = user.name
+               cell.emailLbl.text = user.email
+               return cell
     }
     
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stroryBBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = stroryBBoard.instantiateViewController(withIdentifier: "Chats") as! UesrsTableViewController
+        vc.loadView()
+        vc.showChatController()
+        print("Dismiss completed")
+        //dismiss (animated: true)
+        self.navigationController?.popViewController(animated: true)
+        }
+    }
+   
