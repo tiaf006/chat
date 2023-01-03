@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngH-H0-ULF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643.5114503816794" y="1345.7746478873239"/>
+            <point key="canvasLocation" x="3955" y="993"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -149,13 +149,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679" y="1338"/>
+            <point key="canvasLocation" x="3958" y="268"/>
         </scene>
         <!--profile-->
         <scene sceneID="4X1-9n-zXA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dO0-IH-b5v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="profile" image="person.fill" catalog="system" id="cd1-EI-Iby"/>
+                    <tabBarItem key="tabBarItem" title="profile" image="person" catalog="system" id="cd1-EI-Iby"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ug-Wr-jK7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -168,13 +168,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pji-dY-5Dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679" y="563"/>
+            <point key="canvasLocation" x="3137" y="268"/>
         </scene>
         <!--chats-->
         <scene sceneID="BJZ-M4-Oaw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7WY-GM-9gT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="chats" image="message.fill" catalog="system" id="F8v-IQ-0hI"/>
+                    <tabBarItem key="tabBarItem" title="chats" image="message" catalog="system" id="F8v-IQ-0hI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xIg-VR-Mi6">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -187,7 +187,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTu-J5-ga9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="575"/>
+            <point key="canvasLocation" x="3137" y="993"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LO8-I7-qca">
@@ -200,22 +200,113 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dO0-IH-b5v" kind="relationship" relationship="viewControllers" id="LQ9-0a-LOK"/>
                         <segue destination="7WY-GM-9gT" kind="relationship" relationship="viewControllers" id="jhw-Il-5pF"/>
+                        <segue destination="0b6-9x-xiI" kind="relationship" relationship="viewControllers" id="gt7-cl-C5R"/>
+                        <segue destination="dO0-IH-b5v" kind="relationship" relationship="viewControllers" id="LQ9-0a-LOK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWj-rH-Dhm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="-176"/>
+            <point key="canvasLocation" x="1970" y="395"/>
+        </scene>
+        <!--Users-->
+        <scene sceneID="T2U-co-Rki">
+            <objects>
+                <tableViewController id="4ff-f1-ax4" customClass="UsersController" customModule="Messanger_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="SbT-b6-iNr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="pIG-Qx-otq" customClass="UsersTableViewCell" customModule="Messanger_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pIG-Qx-otq" id="XXw-UC-dll">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="APt-sS-r9q">
+                                            <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="MWN-YK-3uK"/>
+                                                <constraint firstAttribute="height" constant="60" id="YTb-Ja-rOY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUC-ch-wgi">
+                                            <rect key="frame" x="88" y="11" width="266.66666666666669" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V1-0Y-VEa">
+                                            <rect key="frame" x="88" y="44" width="266.66666666666669" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0V1-0Y-VEa" secondAttribute="bottom" constant="8" id="1J2-U7-aqY"/>
+                                        <constraint firstItem="APt-sS-r9q" firstAttribute="leading" secondItem="XXw-UC-dll" secondAttribute="leading" constant="20" symbolic="YES" id="5gY-4f-TY9"/>
+                                        <constraint firstItem="lUC-ch-wgi" firstAttribute="leading" secondItem="APt-sS-r9q" secondAttribute="trailing" constant="8" symbolic="YES" id="6Vu-l7-a6d"/>
+                                        <constraint firstItem="APt-sS-r9q" firstAttribute="top" secondItem="XXw-UC-dll" secondAttribute="top" constant="10" id="DUP-eN-7jg"/>
+                                        <constraint firstItem="0V1-0Y-VEa" firstAttribute="trailing" secondItem="XXw-UC-dll" secondAttribute="trailingMargin" id="Du0-dp-DVH"/>
+                                        <constraint firstItem="0V1-0Y-VEa" firstAttribute="leading" secondItem="APt-sS-r9q" secondAttribute="trailing" constant="8" symbolic="YES" id="Lxx-oY-QwN"/>
+                                        <constraint firstItem="lUC-ch-wgi" firstAttribute="trailing" secondItem="XXw-UC-dll" secondAttribute="trailingMargin" id="Q4x-Aq-oDy"/>
+                                        <constraint firstItem="lUC-ch-wgi" firstAttribute="top" secondItem="XXw-UC-dll" secondAttribute="topMargin" id="j8n-X8-o1N"/>
+                                        <constraint firstItem="APt-sS-r9q" firstAttribute="centerY" secondItem="XXw-UC-dll" secondAttribute="centerY" id="tWW-MQ-AxQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="statusLabelOutlet" destination="0V1-0Y-VEa" id="veo-uR-ENO"/>
+                                    <outlet property="userImageOutlet" destination="APt-sS-r9q" id="ys6-DT-tdE"/>
+                                    <outlet property="userNameLabel" destination="lUC-ch-wgi" id="dgO-be-fVF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4ff-f1-ax4" id="vy9-FZ-Z8j"/>
+                            <outlet property="delegate" destination="4ff-f1-ax4" id="GVD-kJ-HUc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Users" id="BOF-eA-wLA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AQY-8x-Ibk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3956" y="-442"/>
+        </scene>
+        <!--Users-->
+        <scene sceneID="lMY-Ez-F33">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0b6-9x-xiI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Users" image="person.2" catalog="system" id="f9W-gv-gGH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="dWf-DM-EYf">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4ff-f1-ax4" kind="relationship" relationship="rootViewController" id="PrY-rv-RqN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaX-rU-Ufc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3138" y="-442"/>
         </scene>
     </scenes>
     <resources>
-        <image name="message.fill" catalog="system" width="128" height="114"/>
+        <image name="message" catalog="system" width="128" height="116"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.2" catalog="system" width="128" height="82"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="user" width="512" height="512"/>
         <namedColor name="incomingAudioMessageTint">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
