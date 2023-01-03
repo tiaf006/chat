@@ -65,7 +65,7 @@ class NewMesswController: UIViewController {
                 self.users.append(user)
                 self.filteredUsers.append(user)
                 self.tableView.reloadData()
-                print ("!!!!!!!\(user.name), \(user.email)!!!!")
+                print ("!!!!!!!\(String(describing: user.name)), \(String(describing: user.email))!!!!")
             }
         }, withCancel: nil)
     }

@@ -21,8 +21,6 @@ class UserStateViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,9 +33,13 @@ class UserStateViewController: UIViewController {
             user?.uid
             self.dismiss(animated: true)
             if user != nil {
-                let profileVC = ProfileViewController()
-                profileVC.modalPresentationStyle = .fullScreen
-                self.present(profileVC, animated: true)
+               // let profileVC = ProfileViewController()
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "MainVC") 
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+                vc.navigationItem.hidesBackButton = true
+                
             } else {
                 let signinVC = LoginViewController()
                 let authenticationNC = UINavigationController(rootViewController: signinVC)
@@ -45,7 +47,6 @@ class UserStateViewController: UIViewController {
                 self.present(authenticationNC, animated: true)
             }
         }
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

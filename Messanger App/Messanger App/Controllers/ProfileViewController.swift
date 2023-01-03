@@ -47,8 +47,6 @@ class ProfileViewController: UIViewController {
         }
    
     }
-    
-
     //extintion to make the photo rounded
     extension UIImageView {
         func Rouned(){
