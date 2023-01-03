@@ -94,7 +94,7 @@ extension NewMesswController:UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stroryBBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = stroryBBoard.instantiateViewController(withIdentifier: "Chats") as! UesrsTableViewController
+        let vc = stroryBBoard.instantiateViewController(withIdentifier: "Chats") as! UesrsChatsTableViewController
         vc.loadView()
         vc.showChatController()
         print("Dismiss completed")
