@@ -43,6 +43,9 @@
 		4F1AC3C22959E232004ED825 /* Email - Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AC3C12959E232004ED825 /* Email - Password.swift */; };
 		4F2F41DC2960B7EE00C35ED0 /* UesrsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F41DB2960B7EE00C35ED0 /* UesrsTableViewController.swift */; };
 		4F2F41DE2960D30D00C35ED0 /* NewMesswController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F41DD2960D30D00C35ED0 /* NewMesswController.swift */; };
+		876BD07729646721000A1C5C /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876BD07629646721000A1C5C /* UsersController.swift */; };
+		876BD0792964676B000A1C5C /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876BD0782964676B000A1C5C /* UsersCell.swift */; };
+		876BD08329646964000A1C5C /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 876BD08229646964000A1C5C /* ProgressHUD */; };
 		B11EE795295B01ED00522CD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B11EE794295B01ED00522CD9 /* GoogleService-Info.plist */; };
 		B11EE7CE295B0D1A00522CD9 /* UserStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE7CD295B0D1A00522CD9 /* UserStateViewController.swift */; };
 		B188779C2961A37D0079D636 /* searchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188779B2961A37D0079D636 /* searchUserCell.swift */; };
@@ -69,6 +72,8 @@
 		4F1AC3C12959E232004ED825 /* Email - Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Email - Password.swift"; sourceTree = "<group>"; };
 		4F2F41DB2960B7EE00C35ED0 /* UesrsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UesrsTableViewController.swift; sourceTree = "<group>"; };
 		4F2F41DD2960D30D00C35ED0 /* NewMesswController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMesswController.swift; sourceTree = "<group>"; };
+		876BD07629646721000A1C5C /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
+		876BD0782964676B000A1C5C /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		B11EE794295B01ED00522CD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B11EE7CD295B0D1A00522CD9 /* UserStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateViewController.swift; sourceTree = "<group>"; };
 		B188779B2961A37D0079D636 /* searchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchUserCell.swift; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 				03D3BFCA295DAE3300C72D0E /* FirebaseAnalytics in Frameworks */,
 				03D3BFD6295DAE3300C72D0E /* FirebaseAuth in Frameworks */,
 				03D3BFE0295DAE3300C72D0E /* FirebaseDynamicLinks in Frameworks */,
+				876BD08329646964000A1C5C /* ProgressHUD in Frameworks */,
 				B1ECEB78295DBCFC00B8177D /* MessageKit in Frameworks */,
 				03D3BFDA295DAE3300C72D0E /* FirebaseCrashlytics in Frameworks */,
 				03D3BFF2295DAE3300C72D0E /* FirebaseMLModelDownloader in Frameworks */,
@@ -164,6 +170,8 @@
 				B188779D2963291E0079D636 /* Cells */,
 				B10F955F2959B10200F6F20E /* LogIn-Regester */,
 				0BEA091A295AEA0400447860 /* ProfileViewController.swift */,
+				876BD07629646721000A1C5C /* UsersController.swift */,
+				876BD0782964676B000A1C5C /* UsersCell.swift */,
 				4F2F41DD2960D30D00C35ED0 /* NewMesswController.swift */,
 				4F2F41DB2960B7EE00C35ED0 /* UesrsTableViewController.swift */,
 				B18C378C2959D84300132E73 /* ConversationsViewController.swift */,
@@ -270,6 +278,7 @@
 				03D3BFFB295DAE3300C72D0E /* FirebaseStorage */,
 				03D3BFFD295DAE3300C72D0E /* FirebaseStorageCombine-Community */,
 				B1ECEB77295DBCFC00B8177D /* MessageKit */,
+				876BD08229646964000A1C5C /* ProgressHUD */,
 			);
 			productName = "Messanger App";
 			productReference = B1BE371D2959A89F00D36E64 /* Messanger App.app */;
@@ -303,6 +312,7 @@
 				0349414A295B93CB00824901 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				03D3BFC8295DAE3300C72D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B1ECEB76295DBCFC00B8177D /* XCRemoteSwiftPackageReference "MessageKit" */,
+				876BD08129646964000A1C5C /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = B1BE371E2959A89F00D36E64 /* Products */;
 			projectDirPath = "";
@@ -336,6 +346,8 @@
 				B1BE37212959A89F00D36E64 /* AppDelegate.swift in Sources */,
 				4F2F41DC2960B7EE00C35ED0 /* UesrsTableViewController.swift in Sources */,
 				03A4E71529606FC400BDD3C7 /* Chats.swift in Sources */,
+				876BD0792964676B000A1C5C /* UsersCell.swift in Sources */,
+				876BD07729646721000A1C5C /* UsersController.swift in Sources */,
 				B18877A529632A640079D636 /* ConversationsModels.swift in Sources */,
 				B1BE37232959A89F00D36E64 /* SceneDelegate.swift in Sources */,
 				B188779C2961A37D0079D636 /* searchUserCell.swift in Sources */,
@@ -591,6 +603,14 @@
 				kind = branch;
 			};
 		};
+		876BD08129646964000A1C5C /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 13.6.0;
+			};
+		};
 		B1ECEB76295DBCFC00B8177D /* XCRemoteSwiftPackageReference "MessageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MessageKit/MessageKit";
@@ -746,6 +766,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 03D3BFC8295DAE3300C72D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		876BD08229646964000A1C5C /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 876BD08129646964000A1C5C /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 		B1ECEB77295DBCFC00B8177D /* MessageKit */ = {
 			isa = XCSwiftPackageProductDependency;
