@@ -8,28 +8,29 @@
 import UIKit
 import Firebase
 
-class UesrsTableViewController: UIViewController {
+class UesrsChatsTableViewController: UIViewController {
     @IBOutlet weak var UesrsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Chats"
         view.backgroundColor = UIColor.white
         UesrsTable.dataSource = self
         UesrsTable.delegate = self
-        let image = UIImage (systemName: "square.and.pencil")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image,style: .plain, target: self, action: #selector (handleNewMessage))
+       // let image = UIImage (systemName: "square.and.pencil")
+       // navigationItem.rightBarButtonItem = UIBarButtonItem(image: image,style: .plain, target: self, action: #selector (handleNewMessage))
     }
-    @objc func handleNewMessage() {
-        let newMessTableViewController = NewMesswController()
-        self.navigationController?.pushViewController(newMessTableViewController, animated: true)
-    }
+   // @objc func handleNewMessage() {
+      //  let newMessTableViewController = NewMesswController()
+      //  self.navigationController?.pushViewController(newMessTableViewController, animated: true)
+  //  }
     
     func showChatController(){
         print("show chat!!!!!!!")
     }
 }
 
-extension UesrsTableViewController: UITableViewDelegate, UITableViewDataSource{
+extension UesrsChatsTableViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.rowHeight = 90
         return 1
