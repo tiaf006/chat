@@ -14,22 +14,14 @@ class NewMesswController: UIViewController {
         return tableView
     }()
     
+    let searchController = UISearchController()
+    
     var users = [Users] ()
-    
-    let searchUsersField: UITextField = {
-        let field = UITextField()
-        field.placeholder = "search for user..."
-        field.backgroundColor = .white
-        field.layer.borderWidth = 1
-        field.layer.cornerRadius = 12
-        field.layer.borderColor = UIColor.lightGray.cgColor
-        field.keyboardType = .alphabet
-        return field
-    }()
-    
+    var filteredUsers = [Users]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        filteredUsers = users
         view.backgroundColor = UIColor.white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handelCanel))
         layOuts()
@@ -39,25 +31,28 @@ class NewMesswController: UIViewController {
     func layOuts(){
         navigationItem.title = "search"
         view.addSubview(tableView)
-        view.addSubview(searchUsersField)
-        
-        searchUsersField.translatesAutoresizingMaskIntoConstraints = false
-        searchUsersField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        searchUsersField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        searchUsersField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        searchUsersField.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        
+       
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = true
         tableView.isUserInteractionEnabled = true
         self.tableView.register(searchUserCell.self, forCellReuseIdentifier: "searchCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: searchUsersField.bottomAnchor, constant: 16).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
         tableView.reloadData()
+        
+        searchController.loadViewIfNeeded()
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        searchController.searchBar.placeholder = "Search By Email"
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
     }
     
     func fetchUser() {
@@ -68,6 +63,7 @@ class NewMesswController: UIViewController {
                 user.name = dictionary["name"] as? String
                 user.email = dictionary["email"] as? String
                 self.users.append(user)
+                self.filteredUsers.append(user)
                 self.tableView.reloadData()
                 print ("!!!!!!!\(user.name), \(user.email)!!!!")
             }
@@ -83,17 +79,17 @@ extension NewMesswController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         tableView.rowHeight = 60
-              return users.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! searchUserCell
-               cell.isUserInteractionEnabled = true
-               let user = users[indexPath.row]
-               cell.nameLbl.text = user.name
-               cell.emailLbl.text = user.email
-               return cell
+        cell.isUserInteractionEnabled = true
+        let user = filteredUsers[indexPath.row]
+        cell.nameLbl.text = user.name
+        cell.emailLbl.text = user.email
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -102,8 +98,28 @@ extension NewMesswController:UITableViewDataSource, UITableViewDelegate{
         vc.loadView()
         vc.showChatController()
         print("Dismiss completed")
-        //dismiss (animated: true)
         self.navigationController?.popViewController(animated: true)
+    }
+}
+extension NewMesswController: UISearchBarDelegate{
+    
+    func initSearchController(){
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(filteredUsers)
+        if !searchText.isEmpty{
+            print("whyy")
+            filteredUsers = []
+            for user in users{
+                if user.email!.uppercased().contains(searchText.uppercased()){
+                    filteredUsers.append(user)
+                    tableView.reloadData()
+                    print(filteredUsers)
+                    print((user.email!))
+                }
+            }
         }
     }
-   
+}
